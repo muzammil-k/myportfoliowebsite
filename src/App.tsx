@@ -21,7 +21,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <SmoothScroll>
-        <div className="grain relative min-h-screen bg-brand-black">
+        <div className="grain relative min-h-screen bg-brand-black overflow-x-clip">
           <CustomCursor />
           <Navbar />
           <main>
@@ -32,18 +32,18 @@ function App() {
             </Routes>
           </main>
 
-          <footer className="py-24 px-8 md:px-24 border-t border-white/5 flex flex-col md:flex-row justify-between items-start text-brand-gray-light text-[10px] uppercase tracking-[0.4em] relative z-20 bg-brand-black">
-            <div className="max-w-xs mb-12 md:mb-0">
-               <Link to="/" className="text-3xl font-black tracking-tighter text-brand-white block mb-8">
-                 CP<span className="text-brand-orange">.</span>
+          <footer className="py-24 px-6 md:px-24 border-t border-white/5 flex flex-col md:flex-row justify-between items-start text-brand-gray-light text-[10px] uppercase tracking-[0.4em] relative z-20 bg-brand-black overflow-hidden">
+            <div className="max-w-xs mb-16 md:mb-0">
+               <Link to="/" className="text-4xl font-black tracking-tighter text-brand-white block mb-8 uppercase">
+                 MUZAMMIL<span className="text-brand-orange">.</span>
                </Link>
-               <p className="normal-case text-sm font-light leading-relaxed mb-8">
-                 A visual alchemist studio dedicated to high-intensity creative pulse. Pushing the boundaries of what's possible in the digital realm.
+               <p className="normal-case text-sm font-light leading-relaxed mb-8 text-zinc-400">
+                 A graphic designer and visual storyteller dedicated to high-intensity creative pulse. Pushing the boundaries of digital aesthetics and brand identity.
                </p>
-               <span className="block text-brand-gray-mid tracking-widest uppercase text-[10px] font-bold">Based in New York // Global</span>
+               <span className="block text-brand-gray-mid tracking-widest uppercase text-[10px] font-bold">Based in Karachi // Global</span>
             </div>
 
-            <div className="grid grid-cols-2 gap-24">
+            <div className="grid grid-cols-2 gap-12 md:gap-24 w-full md:w-auto">
                <div>
                   <span className="block text-brand-orange font-bold mb-8 tracking-[0.3em]">Studio</span>
                   <ul className="flex flex-col gap-4">

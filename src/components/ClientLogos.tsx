@@ -12,7 +12,7 @@ export default function ClientLogos() {
           initial={{ x: 0 }}
           animate={{ x: "-50%" }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="flex gap-24 items-center"
+          className="flex gap-12 md:gap-24 items-center"
         >
           {[...logos, ...logos].map((logo, i) => (
             <span key={i} className="text-4xl md:text-6xl font-black text-brand-gray-mid/30 tracking-tighter hover:text-brand-orange transition-colors cursor-default">

@@ -33,39 +33,44 @@ export default function Testimonials() {
   const x2 = useTransform(scrollYProgress, [0, 1], [-100, 100]);
 
   return (
-    <section ref={containerRef} className="py-48 bg-brand-black overflow-hidden relative">
+    <section ref={containerRef} className="py-24 md:py-48 bg-brand-black overflow-hidden relative">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-orange/50 to-transparent" />
       
-      <div className="px-8 md:px-24 mb-32">
-        <span className="text-brand-orange uppercase tracking-[0.6em] text-[10px] font-bold block mb-4">Feedback</span>
-        <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase text-brand-white">Client Voices.</h2>
+      <div className="px-6 md:px-24 mb-16 md:mb-32">
+        <span className="text-brand-orange uppercase tracking-[0.4em] md:tracking-[0.6em] text-[10px] font-bold block mb-4">Feedback</span>
+        <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase text-brand-white">Client Voices.</h2>
       </div>
 
-      <div className="space-y-12">
-        <motion.div style={{ x: x1 }} className="flex gap-12 whitespace-nowrap">
+      <div className="space-y-6 md:space-y-12 overflow-x-auto md:overflow-visible no-scrollbar pb-8 md:pb-0 px-6 md:px-0">
+        <motion.div 
+          style={{ x: typeof window !== 'undefined' && window.innerWidth > 768 ? x1 : 0 }} 
+          className="flex gap-4 md:gap-12 md:whitespace-nowrap snap-x snap-mandatory"
+        >
            {testimonials.map((t) => (
-             <div key={t.id} className="flex-shrink-0 w-[450px] p-12 bg-brand-gray-mid/20 rounded-[40px] border border-white/5 backdrop-blur-xl">
-                <p className="text-xl font-medium text-brand-white italic mb-12 normal-case whitespace-normal leading-relaxed">
-                  "{t.content}"
+             <div key={t.id} className="flex-shrink-0 w-[85vw] md:w-[450px] p-6 md:p-12 bg-brand-gray-mid/20 rounded-[24px] md:rounded-[40px] border border-white/5 backdrop-blur-xl snap-center">
+                <p className="text-base md:text-xl font-medium text-brand-white italic mb-6 md:mb-12 normal-case whitespace-normal leading-relaxed">
+                   "{t.content}"
                 </p>
                 <div>
-                   <span className="block font-bold text-brand-orange uppercase tracking-widest text-xs mb-1">{t.author}</span>
-                   <span className="block text-brand-gray-light text-[10px] uppercase tracking-widest">{t.role}</span>
+                   <span className="block font-bold text-brand-orange uppercase tracking-widest text-[9px] md:text-xs mb-1">{t.author}</span>
+                   <span className="block text-brand-gray-light text-[8px] md:text-[10px] uppercase tracking-widest">{t.role}</span>
                 </div>
              </div>
            ))}
-           {/* Duplicate for seamless effect if needed, but here we use scroll transform */}
         </motion.div>
 
-        <motion.div style={{ x: x2 }} className="flex gap-12 whitespace-nowrap pl-48">
+        <motion.div 
+          style={{ x: typeof window !== 'undefined' && window.innerWidth > 768 ? x2 : 0 }} 
+          className="flex gap-4 md:gap-12 md:whitespace-nowrap pl-0 md:pl-48 snap-x snap-mandatory"
+        >
            {[...testimonials].reverse().map((t) => (
-             <div key={t.id} className="flex-shrink-0 w-[450px] p-12 bg-brand-gray-mid/20 rounded-[40px] border border-white/5 backdrop-blur-xl">
-                <p className="text-xl font-medium text-brand-white italic mb-12 normal-case whitespace-normal leading-relaxed">
-                  "{t.content}"
+             <div key={t.id} className="flex-shrink-0 w-[85vw] md:w-[450px] p-6 md:p-12 bg-brand-gray-mid/20 rounded-[24px] md:rounded-[40px] border border-white/5 backdrop-blur-xl snap-center">
+                <p className="text-base md:text-xl font-medium text-brand-white italic mb-6 md:mb-12 normal-case whitespace-normal leading-relaxed">
+                   "{t.content}"
                 </p>
                 <div>
-                   <span className="block font-bold text-brand-orange uppercase tracking-widest text-xs mb-1">{t.author}</span>
-                   <span className="block text-brand-gray-light text-[10px] uppercase tracking-widest">{t.role}</span>
+                   <span className="block font-bold text-brand-orange uppercase tracking-widest text-[9px] md:text-xs mb-1">{t.author}</span>
+                   <span className="block text-brand-gray-light text-[8px] md:text-[10px] uppercase tracking-widest">{t.role}</span>
                 </div>
              </div>
            ))}

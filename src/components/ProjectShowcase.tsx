@@ -18,18 +18,21 @@ export default function ProjectShowcase() {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-black">
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-24 px-8 md:px-24">
-          <div className="flex-shrink-0 w-[60vw] md:w-[40vw] flex flex-col justify-center">
-            <h2 className="text-[12vw] font-black tracking-tighter leading-none mb-4 uppercase">
+    <section ref={containerRef} className="relative h-[300vh] md:h-[400vh] bg-black">
+      <div className="sticky top-0 h-screen flex items-center overflow-hidden no-scrollbar">
+        <motion.div 
+          style={{ x }} 
+          className="flex gap-8 md:gap-24 px-6 md:px-24 py-20 md:py-0"
+        >
+          <div className="flex-shrink-0 w-[80vw] md:w-[40vw] flex flex-col justify-center snap-center">
+            <h2 className="text-[14vw] md:text-[12vw] font-black tracking-tighter leading-[0.8] mb-4 uppercase">
               Selected <br /> <span className="text-zinc-800">Works</span>
             </h2>
-            <p className="text-zinc-500 text-sm uppercase tracking-[0.4em]">Horizontal Showcase // 2024</p>
+            <p className="text-zinc-500 text-[10px] md:text-sm uppercase tracking-[0.4em]">Horizontal Showcase // 2024</p>
           </div>
 
           {projects.map((project) => (
-            <div key={project.id} className="flex-shrink-0 w-[85vw] md:w-[45vw] group relative">
+            <div key={project.id} className="flex-shrink-0 w-[80vw] md:w-[45vw] group relative snap-center">
               <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/5">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -38,16 +41,16 @@ export default function ProjectShowcase() {
                   style={{ backgroundImage: `url(${project.img})` }}
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="px-8 py-3 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-full">View Project</span>
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="px-6 md:px-8 py-2 md:py-3 bg-white text-black text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-full">View Project</span>
                 </div>
               </div>
-              <div className="mt-8 flex justify-between items-end">
+              <div className="mt-6 md:mt-8 flex justify-between items-end">
                 <div>
-                  <h3 className="text-3xl font-bold tracking-tight mb-2 uppercase">{project.title}</h3>
-                  <p className="text-zinc-500 text-xs uppercase tracking-widest">{project.category}</p>
+                   <h3 className="text-lg md:text-3xl font-bold tracking-tight mb-1 md:mb-2 uppercase">{project.title}</h3>
+                   <p className="text-zinc-500 text-[9px] md:text-[10px] uppercase tracking-widest">{project.category}</p>
                 </div>
-                <span className="text-zinc-900 text-8xl font-black leading-none select-none">0{project.id}</span>
+                <span className="text-zinc-900 text-5xl md:text-8xl font-black leading-none select-none">0{project.id}</span>
               </div>
             </div>
           ))}

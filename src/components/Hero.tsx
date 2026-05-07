@@ -28,30 +28,48 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0D0D0D_100%)] opacity-70" />
       </div>
 
-      {/* 2. HUGE Background Text: MUZAMMIL KHAN GRAPHICS DESIGNER */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center pointer-events-none select-none overflow-hidden">
-        <motion.h1 
-          style={{ x: xLeft }}
-          className="text-[14vw] font-black text-white/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase"
-        >
-          MUZAMMIL KHAN
-        </motion.h1>
-        <motion.h1 
-          style={{ x: xRight }}
-          className="text-[14vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase -mt-8"
-        >
-          GRAPHICS DESIGNER
-        </motion.h1>
+      <div className="absolute inset-0 z-10 pointer-events-none select-none overflow-hidden">
+        {/* Desktop Horizontal Text */}
+        <div className="hidden md:flex flex-col justify-center items-center w-full h-full">
+          <motion.h1 
+            style={{ x: xLeft }}
+            className="text-[14vw] font-black text-white/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase"
+          >
+            MUZAMMIL KHAN
+          </motion.h1>
+          <motion.h1 
+            style={{ x: xRight }}
+            className="text-[14vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase -mt-8"
+          >
+            GRAPHIC DESIGNER
+          </motion.h1>
+        </div>
+
+        {/* Mobile Horizontal Text (Fit to screen) */}
+        <div className="md:hidden absolute inset-0 flex flex-col justify-center gap-24 pointer-events-none">
+          <motion.h1 
+            style={{ x: xLeft }}
+            className="text-[7.5vw] font-black text-white/[0.05] leading-none tracking-tighter uppercase whitespace-nowrap text-center w-full"
+          >
+            MUZAMMIL KHAN
+          </motion.h1>
+          <motion.h1 
+            style={{ x: xRight }}
+            className="text-[7.5vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter uppercase whitespace-nowrap text-center w-full"
+          >
+            GRAPHIC DESIGNER
+          </motion.h1>
+        </div>
       </div>
 
       {/* 3. Central Picture Layer */}
-      <div className="relative z-20 flex flex-col items-center">
+      <div className="relative z-20 flex flex-col items-center px-6 mt-[-10vh] md:mt-0">
         <motion.div 
           style={{ y: imgY }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-[75vw] md:w-[32vw] aspect-[4/5] overflow-hidden rounded-[60px] border border-white/10 shadow-[0_0_80px_rgba(250,105,42,0.15)] group"
+          className="relative w-[80vw] md:w-[32vw] aspect-[4/5] overflow-hidden rounded-[40px] md:rounded-[60px] border border-white/10 shadow-[0_0_80px_rgba(250,105,42,0.15)] group"
         >
           <div 
             className="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100" 
@@ -65,18 +83,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-12 text-center relative z-30 pointer-events-none"
+          className="mt-6 md:mt-12 text-center relative z-30 pointer-events-none"
         >
-           <span className="text-brand-orange uppercase tracking-[0.8em] text-xs font-bold mb-4 block">Design Manager</span>
-           <h2 className="text-7xl md:text-9xl font-black text-white tracking-tighter uppercase leading-none mix-blend-difference">
+           <span className="text-brand-orange uppercase tracking-[0.4em] md:tracking-[0.8em] text-[10px] md:text-xs font-bold mb-2 md:mb-4 block">Design Manager</span>
+           <h2 className="text-4xl md:text-9xl font-black text-white tracking-tighter uppercase leading-[0.9] md:leading-none mix-blend-difference">
              PURE <span className="text-brand-orange italic">ENERGY.</span>
            </h2>
         </motion.div>
       </div>
 
       {/* 4. Bottom Services Bar */}
-      <div className="absolute bottom-12 left-0 w-full px-8 md:px-24 z-30">
-         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-12 pb-8">
+      <div className="absolute bottom-4 md:bottom-12 left-0 w-full px-6 md:px-24 z-30">
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-12 border-t border-white/10 pt-6 md:pt-12 pb-4 md:pb-8">
             {[
               { id: "01", title: "Product" },
               { id: "02", title: "Packaging" },
@@ -84,8 +102,8 @@ export default function Hero() {
               { id: "04", title: "Creative" }
             ].map((service) => (
               <div key={service.id} className="group cursor-default">
-                 <span className="text-brand-orange font-black text-lg mb-2 block group-hover:scale-110 transition-transform origin-left">#{service.id}</span>
-                 <span className="text-white text-xl md:text-2xl font-bold uppercase tracking-tight block group-hover:text-brand-orange transition-colors">
+                 <span className="text-brand-orange font-black text-sm md:text-lg mb-0.5 md:mb-2 block group-hover:scale-110 transition-transform origin-left">#{service.id}</span>
+                 <span className="text-white text-base md:text-2xl font-bold uppercase tracking-tight block group-hover:text-brand-orange transition-colors">
                    {service.title}
                  </span>
               </div>
