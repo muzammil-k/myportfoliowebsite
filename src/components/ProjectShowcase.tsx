@@ -54,9 +54,6 @@ export default function ProjectShowcase() {
               </div>
             </div>
           ))}
-              </div>
-            </div>
-          ))}
         </motion.div>
       </div>
     </section>
