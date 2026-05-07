@@ -1,26 +1,10 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import StaggeredMenu from './StaggeredMenu';
 
 export default function Navbar() {
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Close menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
-
-  // Prevent scroll when menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [isOpen]);
 
   const navItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
