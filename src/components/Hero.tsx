@@ -28,23 +28,23 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0D0D0D_100%)] opacity-70" />
       </div>
 
-      {/* 2. HUGE Background Text (Behind Image) */}
+      {/* 2. HUGE Background Text: MUZAMMIL KHAN GRAPHICS DESIGNER */}
       <div className="absolute inset-0 z-10 flex flex-col justify-center items-center pointer-events-none select-none overflow-hidden">
         <motion.h1 
           style={{ x: xLeft }}
-          className="text-[22vw] font-black text-white/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase"
+          className="text-[14vw] font-black text-white/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase"
         >
-          CREATIVE PULSE
+          MUZAMMIL KHAN
         </motion.h1>
         <motion.h1 
           style={{ x: xRight }}
-          className="text-[22vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase -mt-16"
+          className="text-[14vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase -mt-8"
         >
-          VISUAL ALCHEMIST
+          GRAPHICS DESIGNER
         </motion.h1>
       </div>
 
-      {/* 3. Central Picture Layer: Using Untitled.webp */}
+      {/* 3. Central Picture Layer */}
       <div className="relative z-20 flex flex-col items-center">
         <motion.div 
           style={{ y: imgY }}
@@ -53,12 +53,10 @@ export default function Hero() {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="relative w-[75vw] md:w-[32vw] aspect-[4/5] overflow-hidden rounded-[60px] border border-white/10 shadow-[0_0_80px_rgba(250,105,42,0.15)] group"
         >
-          {/* Using the local Untitled.webp image */}
           <div 
             className="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100" 
             style={{ backgroundImage: `url(${heroImage})` }}
           />
-          
           <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-brand-black/20 opacity-60" />
           <div className="absolute inset-0 bg-brand-orange/5 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-1000" />
         </motion.div>
