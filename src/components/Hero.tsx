@@ -33,13 +33,13 @@ export default function Hero() {
         <div className="hidden md:flex flex-col justify-center items-center w-full h-full">
           <motion.h1 
             style={{ x: xLeft }}
-            className="text-[11vw] font-black text-white/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase"
+            className="text-[9.5vw] font-black text-white/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase"
           >
             MUZAMMIL KHAN
           </motion.h1>
           <motion.h1 
             style={{ x: xRight }}
-            className="text-[11vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase -mt-8"
+            className="text-[9.5vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase -mt-8"
           >
             GRAPHICS DESIGNER
           </motion.h1>
