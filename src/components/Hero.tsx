@@ -33,29 +33,29 @@ export default function Hero() {
         <div className="hidden md:flex flex-col justify-center items-center w-full h-full">
           <motion.h1 
             style={{ x: xLeft }}
-            className="text-[14vw] font-black text-white/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase"
+            className="text-[11vw] font-black text-white/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase"
           >
             MUZAMMIL KHAN
           </motion.h1>
           <motion.h1 
             style={{ x: xRight }}
-            className="text-[14vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase -mt-8"
+            className="text-[11vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter whitespace-nowrap uppercase -mt-8"
           >
             GRAPHICS DESIGNER
           </motion.h1>
         </div>
 
         {/* Mobile Horizontal Text (Fit to screen) */}
-        <div className="md:hidden absolute inset-0 flex flex-col justify-center gap-24 pointer-events-none">
+        <div className="md:hidden absolute inset-0 flex flex-col justify-center gap-12 pointer-events-none">
           <motion.h1 
             style={{ x: xLeft }}
-            className="text-[7.5vw] font-black text-white/[0.05] leading-none tracking-tighter uppercase whitespace-nowrap text-center w-full"
+            className="text-[6.5vw] font-black text-white/[0.05] leading-none tracking-tighter uppercase whitespace-nowrap text-center w-full"
           >
             MUZAMMIL KHAN
           </motion.h1>
           <motion.h1 
             style={{ x: xRight }}
-            className="text-[7.5vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter uppercase whitespace-nowrap text-center w-full"
+            className="text-[6.5vw] font-black text-brand-orange/[0.05] leading-none tracking-tighter uppercase whitespace-nowrap text-center w-full"
           >
             GRAPHICS DESIGNER
           </motion.h1>
