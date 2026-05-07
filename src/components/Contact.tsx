@@ -56,7 +56,7 @@ export default function Contact() {
                       <span className="text-brand-gray-mid group-hover:text-brand-orange transition-colors">{social.icon}</span>
                       {social.name}
                     </div>
-                    <ArrowUpRight size={24} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" />
+                    <ArrowUpRight size={20} className="opacity-0 md:opacity-0 md:group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" />
                   </a>
                 </li>
               ))}

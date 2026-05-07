@@ -37,10 +37,10 @@ export default function AboutPage() {
             transition={{ delay: 0.7 }}
             className="w-full lg:col-span-6 flex flex-col justify-center space-y-6 md:space-y-12"
           >
-            <p className="text-base md:text-3xl text-brand-white font-medium leading-relaxed">
+            <p className="text-xl md:text-3xl text-brand-white font-medium leading-relaxed">
               With over 8 years of experience in creative direction and motion design, I've dedicated my career to bridging the gap between artistic vision and commercial impact.
             </p>
-            <p className="text-zinc-500 text-xs md:text-lg font-light leading-relaxed">
+            <p className="text-zinc-500 text-base md:text-lg font-light leading-relaxed">
               My philosophy is simple: Design is the energy that connects people to ideas. Every project is an opportunity to create a digital artifact that leaves a lasting impression on the human psyche.
             </p>
             

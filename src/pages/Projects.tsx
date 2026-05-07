@@ -51,10 +51,10 @@ export default function ProjectsPage() {
               </div>
               <div className="mt-8 md:mt-12 flex justify-between items-start">
                 <div>
-                   <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tight mb-1 md:mb-2">{project.title}</h3>
+                   <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-2">{project.title}</h3>
                    <p className="text-brand-orange text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold">{project.category}</p>
                 </div>
-                <span className="text-zinc-800 text-4xl md:text-6xl font-black leading-none">0{project.id}</span>
+                <span className="text-zinc-800 text-5xl md:text-6xl font-black leading-none">0{project.id}</span>
               </div>
             </motion.div>
           ))}

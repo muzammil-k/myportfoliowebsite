@@ -1,11 +1,27 @@
-import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import StaggeredMenu from './StaggeredMenu';
 
 export default function Navbar() {
   const location = useLocation();
-  
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
   const navItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
     { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
@@ -32,7 +48,7 @@ export default function Navbar() {
               whileHover={{ rotate: 90, scale: 1.1 }}
               className="w-12 h-12 md:w-14 md:h-14 bg-brand-orange rounded-full flex items-center justify-center backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(250,105,42,0.3)] cursor-pointer"
             >
-               <span className="text-white font-black text-xl md:text-2xl tracking-tighter">M</span>
+               <span className="text-white font-black text-xl md:text-2xl tracking-tighter">G</span>
             </motion.div>
           </Link>
         </div>

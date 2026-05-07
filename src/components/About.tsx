@@ -11,8 +11,8 @@ export default function About() {
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section ref={ref} className="py-20 md:py-48 px-4 md:px-24 relative overflow-hidden bg-brand-black">
-      <motion.div style={{ y }} className="absolute -right-6 md:-right-20 top-0 text-[28vw] md:text-[30vw] font-black text-brand-gray-mid/10 select-none pointer-events-none leading-none">
+    <section ref={ref} className="py-24 md:py-48 px-8 md:px-24 relative overflow-hidden bg-brand-black">
+      <motion.div style={{ y }} className="absolute -right-10 md:-right-20 top-0 text-[50vw] md:text-[30vw] font-black text-brand-gray-mid/20 select-none pointer-events-none opacity-20 md:opacity-100">
         02
       </motion.div>
       
