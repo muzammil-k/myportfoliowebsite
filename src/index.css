@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  /* Palette from Branding Image */
+  --color-brand-orange: #FA692A;
+  --color-brand-white: #FFFFFF;
+  --color-brand-gray-light: #D9D9D9;
+  --color-brand-gray-mid: #212121;
+  --color-brand-gray-dark: #141414;
+  --color-brand-black: #0D0D0D;
+}
+
+@layer base {
+  :root {
+    --background: 13 13 13;
+    --foreground: 255 255 255;
+    --accent: 250 105 42;
+  }
+
+  html {
+    background-color: #0D0D0D;
+    color: #FFFFFF;
+    scroll-behavior: initial;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-brand-gradient {
+    background: linear-gradient(to bottom right, #FA692A, #FF9E66);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .perspective-1000 { perspective: 1000px; }
+  .preserve-3d { transform-style: preserve-3d; }
+}
+
+.grain::after {
+  content: "";
+  position: fixed;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9999;
+  animation: grain 8s steps(10) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  30% { transform: translate(3%, -15%); }
+  50% { transform: translate(12%, 9%); }
+  70% { transform: translate(-3%, 11%); }
+  90% { transform: translate(-11%, 1%); }
+}
