@@ -1,11 +1,42 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import emiratesThumbnail from '../assets/EmiratesFoodMart/thumbnail.png';
 
 const projects = [
-  { id: 1, title: "CYBERPUNK", category: "Brand Experience", img: "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=2000&auto=format&fit=crop" },
-  { id: 2, title: "NEBULA", category: "Digital Art", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop" },
-  { id: 3, title: "KINETIC", category: "Motion Direction", img: "https://images.unsplash.com/photo-1635334468644-8461019053c9?q=80&w=2000&auto=format&fit=crop" },
-  { id: 4, title: "VOID", category: "Visual Identity", img: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2000&auto=format&fit=crop" },
+  { 
+    id: 1, 
+    title: "Marco Furniture", 
+    category: "Brand Strategy", 
+    location: "Australia",
+    img: "/assets/marco-furniture.jpg", 
+    role: "Lead Creative & Visual Marketer"
+  },
+  { 
+    id: 2, 
+    title: "IQRA Engine", 
+    category: "Identity & Branding", 
+    location: "Oman",
+    img: "/assets/iqra-engine.jpg", 
+    role: "Branding Specialist"
+  },
+  { 
+    id: 3, 
+    title: "UK Academy", 
+    category: "Content Production", 
+    location: "United Kingdom",
+    img: "/assets/uk-academy.jpg", 
+    role: "Media Strategist"
+  },
+  { 
+    id: 4, 
+    slug: "emirates-food-mart",
+    title: "Emirates Food Mart", 
+    category: "Print & Merchandising", 
+    location: "Canada",
+    img: emiratesThumbnail, 
+    role: "Commercial Graphic Designer"
+  }
 ];
 
 export default function ProjectShowcase() {
@@ -31,29 +62,47 @@ export default function ProjectShowcase() {
             <p className="text-zinc-500 text-[10px] md:text-sm uppercase tracking-[0.4em]">Horizontal Showcase // 2024</p>
           </div>
 
-          {projects.map((project) => (
-            <div key={project.id} className="flex-shrink-0 w-[85vw] md:w-[45vw] group relative snap-center">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-[30px] md:rounded-2xl border border-white/5">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${project.img})` }}
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="px-8 py-3 bg-white text-black text-[10px] font-bold uppercase tracking-widest rounded-full">View Project</span>
+          {projects.map((project) => {
+            const isEmirates = project.id === 4;
+            const content = (
+              <div className="flex-shrink-0 w-[85vw] md:w-[45vw] group relative snap-center cursor-pointer">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[30px] md:rounded-2xl border border-white/5">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${project.img})` }}
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span className="px-8 py-3 bg-white text-black text-[10px] font-bold uppercase tracking-widest rounded-full">View Project</span>
+                  </div>
+                </div>
+                <div className="mt-6 md:mt-8 flex justify-between items-end">
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-2xl md:text-3xl font-black tracking-tight uppercase text-white">{project.title}</h3>
+                    <div className="flex items-center gap-2 text-zinc-500 text-[10px] md:text-xs uppercase tracking-widest">
+                      <span>{project.category}</span>
+                      <span className="w-1 h-1 rounded-full bg-zinc-700"></span>
+                      <span>{project.location}</span>
+                    </div>
+                    <p className="text-zinc-400 text-sm md:text-base mt-2 font-medium">{project.role}</p>
+                  </div>
+                  <span className="text-zinc-900 text-6xl md:text-8xl font-black leading-none select-none">0{project.id}</span>
                 </div>
               </div>
-              <div className="mt-6 md:mt-8 flex justify-between items-end">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-black tracking-tight mb-2 uppercase text-white">{project.title}</h3>
-                  <p className="text-zinc-500 text-[10px] md:text-xs uppercase tracking-widest">{project.category}</p>
-                </div>
-                <span className="text-zinc-900 text-6xl md:text-8xl font-black leading-none select-none">0{project.id}</span>
+            );
+
+            return isEmirates ? (
+              <Link to={`/projects/${project.slug}`} key={project.id}>
+                {content}
+              </Link>
+            ) : (
+              <div key={project.id}>
+                {content}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </motion.div>
       </div>
     </section>

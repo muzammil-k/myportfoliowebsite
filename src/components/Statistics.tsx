@@ -2,10 +2,10 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const stats = [
-  { label: "Global Clients", value: "50+" },
-  { label: "Projects Completed", value: "200+" },
-  { label: "Design Awards", value: "12" },
-  { label: "Years Experience", value: "08" },
+  { label: "Social Media Posts", value: "300+" },
+  { label: "Short-Form Reels", value: "200+" },
+  { label: "Global Clients", value: "10+" },
+  { label: "Years Experience", value: "05+" },
 ];
 
 export default function Statistics() {

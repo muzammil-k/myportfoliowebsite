@@ -13,7 +13,7 @@ export default function Hero() {
   const imgY = useTransform(scrollY, [0, 1000], [0, 100]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-black pt-32 pb-48">
+    <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-black pt-32 pb-12 md:pb-24">
       {/* 1. Optimized Liquid Ether Layer */}
       <div className="absolute inset-0 z-0">
         <LiquidEther
@@ -87,29 +87,12 @@ export default function Hero() {
         >
            <span className="text-brand-orange uppercase tracking-[0.4em] md:tracking-[0.8em] text-[8px] md:text-xs font-bold mb-2 md:mb-4 block">Design Manager</span>
            <h2 className="text-[11vw] sm:text-7xl md:text-9xl font-black text-white tracking-tighter uppercase leading-none mix-blend-difference whitespace-nowrap">
-             PURE <span className="text-brand-orange italic">ENERGY.</span>
+             VISUAL <span className="text-brand-orange italic">IMPACT.</span>
            </h2>
         </motion.div>
       </div>
 
-      {/* 4. Bottom Services Bar */}
-      <div className="absolute bottom-12 md:bottom-12 left-0 w-full px-6 md:px-24 z-30">
-         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 border-t border-white/10 pt-8 md:pt-12 pb-4 md:pb-8">
-            {[
-              { id: "01", title: "Product" },
-              { id: "02", title: "Packaging" },
-              { id: "03", title: "Film" },
-              { id: "04", title: "Creative" }
-            ].map((service) => (
-              <div key={service.id} className="group cursor-default">
-                 <span className="text-brand-orange font-black text-sm md:text-lg mb-1 md:mb-2 block group-hover:scale-110 transition-transform origin-left">#{service.id}</span>
-                 <span className="text-lg md:text-2xl font-bold uppercase tracking-tight block group-hover:text-brand-orange transition-colors">
-                   {service.title}
-                 </span>
-              </div>
-            ))}
-         </div>
-      </div>
+
       
       {/* 5. Gradient Fade to next section */}
       <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-brand-black to-transparent z-40 pointer-events-none" />

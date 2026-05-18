@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import AboutPage from './pages/About'
 import ProjectsPage from './pages/Projects'
+import ProjectDetail from './pages/ProjectDetail'
 import CustomCursor from './components/CustomCursor'
 
 // Scroll to top on route change
@@ -29,6 +30,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/:slug" element={<ProjectDetail />} />
             </Routes>
           </main>
 

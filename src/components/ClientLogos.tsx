@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 const logos = [
-  "LUMINA", "VOID", "SOLARIS", "ETHER", "NEBULA", "AXIS", "PRISM", "VORTEX"
+  "ILLUSTRATOR", "PHOTOSHOP", "CANVA", "FIGMA", "CAPCUT", "INDESIGN", "PREMIER PRO", "DAVINCI", "AFTER EFFECT"
 ];
 
 export default function ClientLogos() {

@@ -3,10 +3,10 @@ import ServicesScene from './ServicesScene';
 import BorderGlow from './BorderGlow';
 
 const services = [
-  { id: "01", title: "Art Direction", desc: "Crafting cohesive visual narratives that resonate with audiences across all platforms." },
-  { id: "02", title: "3D & Motion", desc: "Bringing static concepts to life through dynamic motion and immersive 3D environments." },
-  { id: "03", title: "Brand Identity", desc: "Building strong, memorable brands through strategic design and high-intensity aesthetics." },
-  { id: "04", title: "Digital Design", desc: "Designing high-performance web experiences that prioritize both beauty and usability." },
+  { id: "01", title: "Branding & Vector Design", desc: "Logo Creation, Watermarks, and Guidelines tailored for Tech, E-commerce, and Retail." },
+  { id: "02", title: "Short-Form Video Production", desc: "Engaging Reels, Meta Ads, and Cinematic Pacing for Furniture, Education, and Marketing sectors." },
+  { id: "03", title: "Social Media Engineering", desc: "Content Schedulers and High-Volume Layouts designed for B2C Brands and International Academies." },
+  { id: "04", title: "Print & Large-Format Layout", desc: "High-resolution Window Posters and Showroom Banners for Physical Retail and Global Outlets." },
 ];
 
 export default function Services() {
