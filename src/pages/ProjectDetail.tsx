@@ -143,7 +143,9 @@ export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? projectsData[slug as keyof typeof projectsData] : null;
 
-  const [activeTab, setActiveTab] = useState('All');
+  const [activeTab, setActiveTab] = useState(
+    project && project.categories.length > 1 ? project.categories[0] : 'All'
+  );
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   // Filter gallery items based on selected tab
@@ -153,9 +155,13 @@ export default function ProjectDetail() {
 
   // Reset filter tab on project page change
   useEffect(() => {
-    setActiveTab('All');
+    if (project && project.categories.length > 1) {
+      setActiveTab(project.categories[0]);
+    } else {
+      setActiveTab('All');
+    }
     setLightboxIndex(null);
-  }, [slug]);
+  }, [slug, project]);
 
   // Keyboard navigation & body scroll lock for Lightbox
   useEffect(() => {
@@ -247,18 +253,8 @@ export default function ProjectDetail() {
           </motion.div>
 
           {/* Filtering tabs */}
-          {project.categories.length > 0 && (
+          {project.categories.length > 1 && (
             <div className="flex flex-wrap gap-3 justify-center md:justify-start border-b border-white/5 pb-6">
-              <button
-                onClick={() => setActiveTab('All')}
-                className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer ${
-                  activeTab === 'All'
-                    ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/20 scale-105'
-                    : 'bg-white/5 text-zinc-400 hover:bg-white/10 hover:text-white'
-                }`}
-              >
-                All ({project.images.length})
-              </button>
               {project.categories.map((cat) => {
                 const count = project.images.filter(img => img.category === cat).length;
                 return (
