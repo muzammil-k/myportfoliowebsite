@@ -18,13 +18,65 @@ import brandThumbnail from '../assets/portfolio_webp/logos & branding/branding/c
 import printThumbnail from '../assets/portfolio_webp/menu & brouchers/brouchers/marco digital.webp';
 import xauusdThumbnail from '../assets/portfolio_webp/logos & branding/branding/xauusd bullet.webp';
 
+const formatLogoName = (filename: string): string => {
+  const cleanName = filename.trim();
+  const lookup: Record<string, string> = {
+    '1': 'Thrift',
+    'ap carriers 1': 'AP Carriers',
+    'Artboard 1': 'The Karate Club',
+    'Artboard 1s': 'The Karate Club (Identity)',
+    'Artboard 2': 'The Karate Club Mockups',
+    'Artboard 3': 'The Karate Club Emblem',
+    'BHY': 'BHY Logo',
+    'CARBON SPARK 3': 'Carbon Spark',
+    'cs shield withou topa': 'CS Shield',
+    'Envelope With String Mockups': 'Envelope Mockup',
+    'equator communication 2': 'Equator Communication',
+    'find aim 3': 'Find Aim',
+    'flith force cleaners 4': 'Filth Force Cleaners',
+    'gospel 2': 'Gospel',
+    'i point main': 'I-Point',
+    'M BRIDGE': 'M-Bridge',
+    'MEDIC APP 2': 'Medic App',
+    'NURTURE FIR TREE': 'Nurture Fir Tree',
+    'OFF BEAT 2': 'Off Beat',
+    'ROTO': 'Roto',
+    'TM3': 'TM3',
+    'Untitled-1': 'Geometric Mark',
+    'Untitled-3': 'Creative Monogram',
+    'Untitled-4': 'Corporate Identity',
+    'WHITE': 'White Shield',
+    'wefg': 'Modern Signet',
+    'world migratio. 3ai': 'World Migration',
+    'zinda chic 2': 'Zinda Chic',
+    'ta red jpg': 'TA Red Logo',
+    'nin ani 22': 'Nin Ani Logo',
+    'maroon': 'Maroon Emblem',
+    'ASTRON EAGLE': 'Astron Eagle',
+    'bakery': 'Bakery Logo',
+    'bet on better': 'Bet On Better',
+    'novizio': 'Novizio'
+  };
+
+  if (lookup[cleanName]) {
+    return lookup[cleanName];
+  }
+
+  return cleanName
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase());
+};
+
 // Dynamic WebP portfolio files using Vite's glob import
 const logoFiles = import.meta.glob('../assets/portfolio_webp/logos & branding/logos/*.webp', { eager: true, import: 'default' });
-const logoImages = Object.entries(logoFiles).map(([path, url]) => ({
-  url: url as string,
-  category: 'Logos',
-  name: path.split('/').pop()?.replace('.webp', '') || ''
-}));
+const logoImages = Object.entries(logoFiles).map(([path, url]) => {
+  const filename = path.split('/').pop()?.replace('.webp', '') || '';
+  return {
+    url: url as string,
+    category: 'Logos',
+    name: formatLogoName(filename)
+  };
+});
 
 const brandingFiles = import.meta.glob('../assets/portfolio_webp/logos & branding/branding/*.webp', { eager: true, import: 'default' });
 const brandingImages = Object.entries(brandingFiles).map(([path, url]) => ({
@@ -241,17 +293,6 @@ export default function ProjectDetail() {
         </motion.div>
 
         <div className="space-y-12 md:space-y-24">
-          {/* Main Showcase Banner Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full aspect-[21/9] rounded-[20px] md:rounded-[40px] overflow-hidden border border-white/5 relative bg-zinc-900"
-          >
-             <img src={project.thumbnail} alt={`${project.title} cover`} className="absolute inset-0 w-full h-full object-cover" />
-          </motion.div>
-
           {/* Filtering tabs */}
           {project.categories.length > 1 && (
             <div className="flex flex-wrap gap-3 justify-center md:justify-start border-b border-white/5 pb-6">
