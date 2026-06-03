@@ -32,7 +32,19 @@ export default function Navbar() {
               whileHover={{ rotate: 90, scale: 1.1 }}
               className="w-12 h-12 md:w-14 md:h-14 bg-brand-orange rounded-full flex items-center justify-center backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(250,105,42,0.3)] cursor-pointer"
             >
-               <span className="text-white font-black text-xl md:text-2xl tracking-tighter">G</span>
+               <svg 
+                 viewBox="0 0 100 100" 
+                 fill="none" 
+                 xmlns="http://www.w3.org/2000/svg" 
+                 className="w-6 h-6 md:w-7 md:h-7 stroke-white"
+                 strokeWidth="10"
+                 strokeLinecap="round"
+                 strokeLinejoin="round"
+               >
+                 <path d="M15 80V20L40 50L65 20V80" />
+                 <path d="M65 50L85 20" />
+                 <path d="M65 50L85 80" />
+               </svg>
             </motion.div>
           </Link>
         </div>
