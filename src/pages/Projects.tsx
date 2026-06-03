@@ -2,14 +2,19 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import emiratesThumbnail from '../assets/EmiratesFoodMart/thumbnail.png';
+import iqraThumbnail from '../assets/IQRABOT/thumbnail.jpeg';
+import marcoThumbnail from '../assets/marco/thumbnail.png';
+import brandThumbnail from '../assets/portfolio_webp/logos & branding/branding/corporate brand identity.webp';
+import printThumbnail from '../assets/portfolio_webp/menu & brouchers/brouchers/marco digital.webp';
+import xauusdThumbnail from '../assets/portfolio_webp/logos & branding/branding/xauusd bullet.webp';
 
 const projects = [
-  { id: 1, title: "CYBERPUNK", category: "Brand Experience", img: "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=2000&auto=format&fit=crop" },
-  { id: 2, title: "NEBULA", category: "Digital Art", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop" },
-  { id: 3, title: "KINETIC", category: "Motion Direction", img: "https://images.unsplash.com/photo-1635334468644-8461019053c9?q=80&w=2000&auto=format&fit=crop" },
+  { id: 1, slug: 'marco-furniture', title: "Marco Furniture", category: "Social Content & Brand Strategy", img: marcoThumbnail },
+  { id: 2, slug: 'iqra-engine', title: "IQRA Engine", category: "Identity & Branding System", img: iqraThumbnail },
+  { id: 3, slug: 'brand-identity-logos', title: "Brand Identity & Logos", category: "Visual Identity Systems", img: brandThumbnail },
   { id: 4, slug: 'emirates-food-mart', title: "Emirates Food Mart", category: "Print & Merchandising", img: emiratesThumbnail },
-  { id: 5, title: "AURA", category: "Interactive Install", img: "https://images.unsplash.com/photo-1633167606207-d840b5070fc2?q=80&w=2000&auto=format&fit=crop" },
-  { id: 6, title: "PRISM", category: "Creative Coding", img: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?q=80&w=2000&auto=format&fit=crop" },
+  { id: 5, slug: 'print-media-design', title: "Print & Marketing Media", category: "Layout & Editorial Design", img: printThumbnail },
+  { id: 6, slug: 'xauusd-bullet', title: "XAUUSD Bullet", category: "Digital Marketing & Grid Design", img: xauusdThumbnail },
 ];
 
 export default function ProjectsPage() {
@@ -29,7 +34,7 @@ export default function ProjectsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
           {projects.map((project, i) => {
-            const isEmirates = project.id === 4;
+            const hasLink = project.slug;
             const content = (
               <motion.div 
                 initial={{ opacity: 0, y: 40 }}
@@ -62,7 +67,7 @@ export default function ProjectsPage() {
               </motion.div>
             );
 
-            return isEmirates ? (
+            return hasLink ? (
               <Link to={`/projects/${project.slug}`} key={project.id} className="block">
                 {content}
               </Link>

@@ -38,7 +38,7 @@ export default function Services() {
                 glowRadius={50}
                 glowIntensity={1.2}
               >
-                <div className="p-8 h-full bg-brand-gray-mid/10 backdrop-blur-xl group flex flex-col">
+                <div className="p-8 h-full rounded-[inherit] bg-brand-gray-mid/10 backdrop-blur-xl group flex flex-col">
                   <span className="text-brand-orange font-black text-3xl md:text-4xl block mb-6 md:mb-8 opacity-20 group-hover:opacity-100 transition-opacity">
                     {service.id}
                   </span>

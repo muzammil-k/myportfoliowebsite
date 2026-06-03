@@ -1,41 +1,47 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import emiratesThumbnail from '../assets/EmiratesFoodMart/thumbnail.png';
+import brandingThumbnail from '../assets/showcase/branding.png';
+import postersThumbnail from '../assets/showcase/posters.png';
+import reelsThumbnail from '../assets/showcase/reels.png';
+import marketingThumbnail from '../assets/showcase/marketing.png';
 
 const projects = [
   { 
     id: 1, 
-    title: "Marco Furniture", 
-    category: "Brand Strategy", 
-    location: "Australia",
-    img: "/assets/marco-furniture.jpg", 
-    role: "Lead Creative & Visual Marketer"
+    slug: "brand-identity-logos",
+    title: "Brand Identity & Logos", 
+    category: "Visual Identity", 
+    location: "Global",
+    img: brandingThumbnail, 
+    role: "Core Branding Systems"
   },
   { 
     id: 2, 
-    title: "IQRA Engine", 
-    category: "Identity & Branding", 
-    location: "Oman",
-    img: "/assets/iqra-engine.jpg", 
-    role: "Branding Specialist"
+    slug: "marco-furniture",
+    title: "Social Media Posts", 
+    category: "Digital Content", 
+    location: "Commercial",
+    img: postersThumbnail, 
+    role: "Grid Aesthetics"
   },
   { 
     id: 3, 
-    title: "UK Academy", 
-    category: "Content Production", 
-    location: "United Kingdom",
-    img: "/assets/uk-academy.jpg", 
-    role: "Media Strategist"
+    slug: "marco-furniture",
+    title: "Motion & Reels", 
+    category: "Video Production", 
+    location: "Digital",
+    img: reelsThumbnail, 
+    role: "Cinematic Transitions"
   },
   { 
     id: 4, 
-    slug: "emirates-food-mart",
-    title: "Emirates Food Mart", 
-    category: "Print & Merchandising", 
-    location: "Canada",
-    img: emiratesThumbnail, 
-    role: "Commercial Graphic Designer"
+    slug: "print-media-design",
+    title: "Menu & Brochures", 
+    category: "Print Design", 
+    location: "Commercial",
+    img: marketingThumbnail, 
+    role: "Layout & Typography"
   }
 ];
 
@@ -56,14 +62,13 @@ export default function ProjectShowcase() {
           className="flex gap-8 md:gap-24 px-6 md:px-24 py-20 md:py-0"
         >
           <div className="flex-shrink-0 w-[80vw] md:w-[40vw] flex flex-col justify-center snap-center">
-            <h2 className="text-[14vw] md:text-[12vw] font-black tracking-tighter leading-[0.8] mb-4 uppercase">
+            <h2 className="text-[14vw] md:text-[7vw] font-black tracking-tighter leading-[0.8] mb-4 uppercase">
               Selected <br /> <span className="text-zinc-800">Works</span>
             </h2>
             <p className="text-zinc-500 text-[10px] md:text-sm uppercase tracking-[0.4em]">Horizontal Showcase // 2024</p>
           </div>
 
           {projects.map((project) => {
-            const isEmirates = project.id === 4;
             const content = (
               <div className="flex-shrink-0 w-[85vw] md:w-[45vw] group relative snap-center cursor-pointer">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-[30px] md:rounded-2xl border border-white/5">
@@ -75,7 +80,7 @@ export default function ProjectShowcase() {
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <span className="px-8 py-3 bg-white text-black text-[10px] font-bold uppercase tracking-widest rounded-full">View Project</span>
+                    <span className="px-8 py-3 bg-white text-black text-[10px] font-bold uppercase tracking-widest rounded-full">View Gallery</span>
                   </div>
                 </div>
                 <div className="mt-6 md:mt-8 flex justify-between items-end">
@@ -93,14 +98,11 @@ export default function ProjectShowcase() {
               </div>
             );
 
-            return isEmirates ? (
+            // Navigate to dynamic project pages
+            return (
               <Link to={`/projects/${project.slug}`} key={project.id}>
                 {content}
               </Link>
-            ) : (
-              <div key={project.id}>
-                {content}
-              </div>
             );
           })}
         </motion.div>

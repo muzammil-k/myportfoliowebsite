@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import AboutPage from './pages/About'
 import ProjectsPage from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
-import CustomCursor from './components/CustomCursor'
+import { SmoothCursor } from './components/magicui/smooth-cursor'
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -23,7 +23,7 @@ function App() {
       <ScrollToTop />
       <SmoothScroll>
         <div className="grain relative min-h-screen bg-brand-black overflow-x-clip">
-          <CustomCursor />
+          <SmoothCursor />
           <Navbar />
           <main>
             <Routes>
