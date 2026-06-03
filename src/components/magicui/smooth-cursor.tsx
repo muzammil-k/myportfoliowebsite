@@ -137,6 +137,17 @@ export function SmoothCursor({
   }, [])
 
   useEffect(() => {
+    if (isEnabled && isVisible) {
+      document.documentElement.classList.add('no-cursor');
+    } else {
+      document.documentElement.classList.remove('no-cursor');
+    }
+    return () => {
+      document.documentElement.classList.remove('no-cursor');
+    }
+  }, [isEnabled, isVisible])
+
+  useEffect(() => {
     if (!isEnabled) {
       return
     }

@@ -75,3 +75,9 @@
   70% { transform: translate(-3%, 11%); }
   90% { transform: translate(-11%, 1%); }
 }
+
+.no-cursor,
+.no-cursor * {
+  cursor: none !important;
+}
+
