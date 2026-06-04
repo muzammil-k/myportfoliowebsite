@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import LiquidEther from './LiquidEther';
+import AuraFlow from './AuraFlow';
 import heroImage from '../assets/Untitled.webp';
 
 export default function Hero() {
@@ -14,18 +14,10 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-black pt-32 pb-12 md:pb-24">
-      {/* 1. Optimized Liquid Ether Layer */}
+      {/* 1. Optimized Aura Flow Layer */}
       <div className="absolute inset-0 z-0">
-        <LiquidEther
-          colors={['#FA692A', '#ffa300', '#D9D9D9']}
-          mouseForce={15}
-          cursorSize={80}
-          isViscous={false}
-          resolution={0.4}
-          autoDemo={true}
-          autoSpeed={0.5}
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0D0D0D_100%)] opacity-70" />
+        <AuraFlow />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0D0D0D_100%)] opacity-40" />
       </div>
 
       <div className="absolute inset-0 z-10 pointer-events-none select-none overflow-hidden">
